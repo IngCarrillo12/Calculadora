@@ -31,17 +31,32 @@ body {
     border: 1px solid #000;
     padding: 1rem;
 }
-
+.screen__operacion{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border: 1px solid #a323a3;
+    height: 100%;
+    font-size: 1.5rem;
+}
+.screen__resultado{
+    display: none;
+    border: 1px solid #000;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+}
 .calculator__container {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-
-}
+}   
 
 .btn {
-    padding: 1.5rem
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
