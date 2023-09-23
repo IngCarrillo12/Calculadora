@@ -1,7 +1,9 @@
 export const validateClick =(boton, pressed, operaciones, screen,result)=>{
     if(boton.id === "clean"){
         screen.textContent="0";
+        screen.style.fontSize = "1.5rem"
         result.style.display = "none";
+        result.textContent = "";
         return;
       }
       if(boton.id === "delete"){
@@ -10,12 +12,16 @@ export const validateClick =(boton, pressed, operaciones, screen,result)=>{
           }else{
             screen.textContent = screen.textContent.slice(0,-1);
           }
+          result.textContent= "";
+          result.style.display= "none"
+          screen.style.fontSize = "1.5rem"
           return;
         }
       if(boton.id === "equal"){
         try {
           result.style.display = "block";
-          result.textContent = eval(screen.textContent)
+          screen.style.fontSize = "1rem"
+          result.textContent = eval(screen.textContent.replace("^","**"))
         } catch {
           screen.textContent  = "Error!"
         }
@@ -23,6 +29,8 @@ export const validateClick =(boton, pressed, operaciones, screen,result)=>{
       }
       if((result.textContent!=="")&&(operaciones.includes(pressed))){
         screen.textContent = result.textContent + pressed;
+        screen.style.fontSize = "1.5rem"
+        result.style.display="none"
         result.textContent= ""
         return
       }

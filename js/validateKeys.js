@@ -1,7 +1,7 @@
 export const validateKeys = (pressed, operaciones, screen, result)=>{
-    console.log(pressed)  
   if(pressed=== "Delete"){
       screen.textContent="0";
+      screen.style.fontSize = "1.5rem"
       result.style.display = "none";
       return;
     }
@@ -16,6 +16,8 @@ export const validateKeys = (pressed, operaciones, screen, result)=>{
     if(pressed === "Enter"){
       try {
         result.style.display = "block";
+        screen.style.fontSize = "1rem"
+        screen.style.fontSize = "1.5rem"
         result.textContent = eval(screen.textContent)
       } catch {
         screen.textContent  = "Error!"

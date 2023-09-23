@@ -8,38 +8,57 @@
     <title>Calculadora</title>
 </head>
 
-<body>
-
+<body class="body">
     <div class="calculator">
         <div class="calculator__screen">
             <div class="screen__operacion">0</div>
             <div class="screen__resultado"></div>
         </div>
         <div class="calculator__container">
-            <button id="clean" class="btn">C</button>
-            <button id="delete" class="btn">D</button>
-            <button class="btn percentage">%</button>
-            <button class="btn division">/</button>
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
-            <button class="btn multiplication">*</button>
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <button class="btn subtraction">-</button>
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <button class="btn addition">+</button>
-            <button class="btn potency">^</button>
-            <button class="btn">0</button>
-            <button class="btn">.</button>
-            <button id="equal" class="btn">=</button>
+            <button id="clean" class="btn operation">C</button>
+            <button id="delete" class="btn operation">D</button>
+            <button class="btn percentage operation">%</button>
+            <button class="btn division operation">/</button>
+            <button class="btn btn_number">7</button>
+            <button class="btn btn_number">8</button>
+            <button class="btn btn_number">9</button>
+            <button class="btn multiplication operation">*</button>
+            <button class="btn btn_number">4</button>
+            <button class="btn btn_number">5</button>
+            <button class="btn btn_number">6</button>
+            <button class="btn subtraction operation">-</button>
+            <button class="btn btn_number">1</button>
+            <button class="btn btn_number">2</button>
+            <button class="btn btn_number">3</button>
+            <button class="btn addition operation">+</button>
+            <button class="btn potency operation">^</button>
+            <button class="btn btn_number">0</button>
+            <button class="btn btn_number">.</button>
+            <button id="equal" class="btn operation">=</button>
      
         </div>
     </div>
+    <div class="container-theme">
+        <label for="theme" class="theme">
+            <span class="theme__toggle-wrap">
+                <input id="theme" class="theme__toggle" onclick="validateTheme()" type="checkbox" role="switch" name="theme" value="dark">
+                <span class="theme__fill"></span>
+                <span class="theme__icon">
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                </span>
+            </span>
+        </label>
+    </div>
     <script type="module" src="./js/index.js"></script>
+    <script src="./js/validateTheme.js"></script>
 </body>
 
 </html>

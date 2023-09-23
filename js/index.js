@@ -18,3 +18,4 @@ botones.forEach(boton =>{
       validateClick(boton,pressed, operaciones, screen,result);
       })
     })
+    
