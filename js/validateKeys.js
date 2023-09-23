@@ -24,7 +24,7 @@ export const validateKeys = (pressed, operaciones, screen, result)=>{
       }
       return;
     }
-    if(screen.textContent==="0"){
+    if((screen.textContent==="0")&&(!operaciones.includes(pressed))){
       screen.textContent = pressed;
     }else{
       screen.textContent += pressed;
