@@ -392,9 +392,15 @@ body {
     width: 65px;
     height: 65px;
   }
+  .btn:hover{
+    width: 66px;
+    height: 66px;
+    box-shadow: 0px 0px 4px #f2f2f2;
+    border: 1px solid #444242;
+  }
   .container-theme{
-    top: 0px;
-    right: 0px;
+    top: 5px;
+    right: 5px;
   }
   body{
     width: 100%;
