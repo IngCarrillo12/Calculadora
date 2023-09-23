@@ -24,8 +24,13 @@ export const validateKeys = (pressed, operaciones, screen, result)=>{
       }
       return;
     }
-    if((screen.textContent==="0")&&(!operaciones.includes(pressed))){
-      screen.textContent = pressed;
+    if((screen.textContent==="0")){
+      if(!operaciones.includes(pressed)){
+        screen.textContent = pressed;
+      }
+      if(pressed==="."){
+        screen.textContent = "0"+pressed;
+      }
     }else{
       screen.textContent += pressed;
       result.style.display = "none";
