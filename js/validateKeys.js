@@ -5,26 +5,28 @@ export const validateKeys = (pressed, operaciones, screen, result)=>{
       result.style.display = "none";
       return;
     }
-    if(pressed === "Backspace"){
+  if(pressed === "Backspace"){
         if(screen.textContent.length === 1){
           screen.textContent = "0"
         }else{
           screen.textContent = screen.textContent.slice(0,-1);
         }
         return;
-      }
-    if(pressed === "Enter"){
+    }
+  if(pressed === "Enter"){
       try {
         result.style.display = "block";
         screen.style.fontSize = "1rem"
         screen.style.fontSize = "1.5rem"
         result.textContent = eval(screen.textContent)
       } catch {
-        screen.textContent  = "Error!"
+        if(result.textContent === ""){
+            result.textContent  = `¡¡ Error en operacion ${screen.textContent} !!`
+        }
       }
       return;
     }
-    if((screen.textContent==="0")){
+  if((screen.textContent==="0")){
       if(!operaciones.includes(pressed)){
         screen.textContent = pressed;
       }
@@ -36,13 +38,13 @@ export const validateKeys = (pressed, operaciones, screen, result)=>{
       result.style.display = "none";
     }
 
-    if((result.textContent!=="")&&(operaciones.includes(pressed))){
+  if((result.textContent!=="")&&(operaciones.includes(pressed))){
         screen.textContent = result.textContent + pressed;
         result.textContent= ""
         return
-      }
-      if((operaciones.includes(pressed))&&(operaciones.includes(screen.textContent.charAt(screen.textContent.length-1)))){
+    }
+  if((operaciones.includes(pressed))&&(operaciones.includes(screen.textContent.charAt(screen.textContent.length-1)))){
         screen.textContent = screen.textContent.slice(0,-1) + pressed;
         return;
-      }
+    }
   }

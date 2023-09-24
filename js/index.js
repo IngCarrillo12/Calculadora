@@ -5,7 +5,7 @@ const screen = document.querySelector(".screen__operacion");
 const result = document.querySelector(".screen__resultado")
 const operaciones = ["+","-","/","*","^","%"]
 document.addEventListener("keydown",(event)=>{
-    const expReg = new RegExp("^[1-9+\\-*/^%.]+$|Backspace|Enter|Delete");
+    const expReg = new RegExp("^[0-9+\\-*/^%.]+$|Backspace|Enter|Delete");
     let pressed = event.key;
     if(expReg.test(pressed)){
       validateKeys(pressed, operaciones, screen, result)

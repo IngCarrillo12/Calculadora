@@ -6,7 +6,7 @@ export const validateClick =(boton, pressed, operaciones, screen,result)=>{
         result.textContent = "";
         return;
       }
-      if(boton.id === "delete"){
+    if(boton.id === "delete"){
           if(screen.textContent.length === 1){
             screen.textContent = "0"
           }else{
@@ -16,29 +16,31 @@ export const validateClick =(boton, pressed, operaciones, screen,result)=>{
           result.style.display= "none"
           screen.style.fontSize = "1.5rem"
           return;
-        }
-      if(boton.id === "equal"){
+      }
+    if(boton.id === "equal"){
         try {
           result.style.display = "block";
           screen.style.fontSize = "1rem"
           result.textContent = eval(screen.textContent.replace("^","**"))
         } catch {
-          screen.textContent  = "Error!"
+          if(result.textContent === ""){
+            result.textContent  = `¡¡ Error en operacion ${screen.textContent} !!`
+        }
         }
         return;
       }
-      if((result.textContent!=="")&&(operaciones.includes(pressed))){
+    if((result.textContent!=="")&&(operaciones.includes(pressed))){
         screen.textContent = result.textContent + pressed;
         screen.style.fontSize = "1.5rem"
         result.style.display="none"
         result.textContent= ""
         return
       }
-      if((operaciones.includes(pressed))&&(operaciones.includes(screen.textContent.charAt(screen.textContent.length-1)))){
+    if((operaciones.includes(pressed))&&(operaciones.includes(screen.textContent.charAt(screen.textContent.length-1)))){
         screen.textContent = screen.textContent.slice(0,-1) + pressed;
         return;
       }
-      if((screen.textContent==="0") ){
+    if((screen.textContent==="0") ){
         if(!operaciones.includes(pressed)){
           screen.textContent = pressed;
         }
@@ -47,8 +49,6 @@ export const validateClick =(boton, pressed, operaciones, screen,result)=>{
         }
       }else{
         screen.textContent += pressed;
-        result.style.display = "none";
-        
-        
+        result.style.display = "none";  
       }
 }
